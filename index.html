@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <style>
+           
+        .body{
+            height: 99vh;
+            width: 99vw;
+            overflow: hidden;
+            
+        }
+        .container{
+            height: 63vh;
+            background-color: rgb(164, 164, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-inline: auto;
+            width: 40%;
+            border-radius: 50px;
+            margin-top: 10vh;
+            box-sizing: border-box;
+        }
+        @media only screen and (max-width: 600px) {
+             
+                .container{
+            height: 63vh;
+            background-color: rgb(164, 164, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-inline: auto;
+            width: 60%;
+            border-radius: 50px;
+            margin-top: 10vh;
+            box-sizing: border-box;
+        }
+                 
+            }
+
+    </style>
+    </style>
+    <title>Student Registration Form</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="for">
+
+            
+            <table>
+                <th>
+                    <td colspan="2">Student Registration Form</td>
+                </th>    
+                <form action="process_registration.php" method="post">
+                    <tr>
+                        <td><label for="first_name">First Name:</label></td>
+                        <td><input type="text" name="first_name" required></td> 
+                    </tr> 
+                    
+                    <tr>
+                        
+                        <td><label for="last_name">Last Name:</label> </td>
+                        <td>  <input type="text" name="last_name" required></td>
+                        
+                    </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td>  <input type="email" name="email" required></td>
+            </tr>  
+            
+            <tr>
+                
+                <td><label for="phone">Phone:</label></td>
+                <td>    <input type="text" name="phone" required></td>
+                
+            </tr>
+            <tr>
+                <td>
+                    
+                    <label for="birth_date">Date of Birth:</label>
+                </td>
+                <td>
+                    
+                    <input type="date" name="birth_date" required><br>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    
+                    <input type="submit" value="Register">
+                </td>
+            </tr>
+        </form>
+    </table>
+
+  if you want to acsess database enter your password <br>  <input type="password" id="pass"> <input type="button" onclick="myfun()" value="show db"> <br>
+  <div id="student-data">
+
+  </div>
+  <script>
+    function myfun(){
+    $pasbyuser= document.getElementById("pass").value;
+    $setpass1="idk why";
+    if ($pasbyuser===$setpass1) {
+        var xhr = new XMLHttpRequest();
+            xhr.open("GET", "display_data.php", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("student-data").innerHTML = xhr.responseText;
+                    // document.write(xhr.responseText);
+                }
+            };
+            xhr.send();
+    } else {
+        
+    }
+}
+  </script>
+<span style="color: red;"> this site is under devlopment so give me your feedback!!</span>
+</div>
+
+</div>
+
+
+
+</body>
+</html>
